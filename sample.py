@@ -9,6 +9,17 @@ def result(user_choice): # user_choice 를 받아와서 stay, switch를 반환�
         switch += 1
 
     return stay, switch
+    
+    
+def monty_hall(trial):
+    global stay
+    global switch
+
+    stay_percent = stay / trial * 100
+    switch_percent = switch / trial * 100
+    
+    return stay_percent, switch_percent
+
 
 
 stay = 0                        # stay와 switch의 결과값 비교를 위한 initialize
@@ -22,6 +33,7 @@ for _ in range(trial):		# 반복할 횟수는 일단 100으로.
 
     stay, switch = result(user_choice) # result 함수로 반환된 user_choice 를 stay, switch 로 반환
 
-final_stay = stay/trial*100
-final_switch = switch/trial*100
-print(f"{final_stay} {final_switch}") 
+stay_percent, switch_percent = monty_hall(trial)
+
+print(f"Stay won {stay_percent}% of the time.")
+print(f"Switch won {switch_percent}% of the time.")

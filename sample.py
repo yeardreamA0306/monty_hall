@@ -21,3 +21,7 @@ for _ in range(trial):		# 반복할 횟수는 일단 100으로.
     user_choice = doors.pop()	# 나의 선택과 동시에 doors에서는 해당 요소 제거 ## 사용자가 선택할 수 있도록 함수화
 
     stay, switch = result(user_choice) # result 함수로 반환된 user_choice 를 stay, switch 로 반환
+
+final_stay = stay/trial*100
+final_switch = switch/trial*100
+print(f"{final_stay} {final_switch}") 
